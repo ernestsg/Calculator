@@ -4,7 +4,6 @@
 
     <head>
       <title> Project #1 </title>
-      <link rel="stylesheet" href="style1.css"/>
 
           <style>
           body {
@@ -237,7 +236,7 @@
 
           </fieldset>
 
-      <script src="/Users/ernestsg/Desktop/Websites/Projects/Project 1 (Calculator)/script.js">
+      <script>
             //"My first Project"
 
 
