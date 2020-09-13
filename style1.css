@@ -1,0 +1,170 @@
+body {
+  background: linear-gradient(to right, black, orange);
+}
+
+#calculator{
+   background-color: #2f2f2f;
+   color: #9d9d9d;
+   display: block;
+   margin: auto;
+   margin-top: 125px;
+   padding: 20px 0px 20px 0px;
+   border: solid 2px #8a8a8a;
+   width: 294px;
+   height: 330px;
+   font-size: 20px;
+
+}
+
+legend {
+  float:right;
+  font-family: monospace;
+  font-size: 30px;
+  padding-right: 20px;
+  color: white;
+}
+
+#displayOperations{
+  color: white;
+  font-size: 30px;
+  background-color: #2f2f2f;
+  width: 272px;
+  height : 27px;
+  padding-right: 10px;
+  margin-top: 20px;
+  text-align:right;
+  overflow: hidden;
+  padding: 0px 20px 20px 0px;
+}
+
+.numbers{
+  display: inline;
+  border: solid 1px #8a8a8a;
+  color: white;
+  padding: 10px 25px 10px 25px;
+  margin-right: -5px;
+  font-size: 20px;
+  background-color: #2f2f2f;
+  width: inherit;
+  cursor: pointer;
+}
+
+.numbers:hover{
+  background-color: #1f1f1f;
+}
+
+#zero{
+  display:inline-grid;
+  padding-right: 66px;
+  padding-left: 75px;
+}
+
+#dot{
+  display: inline;
+  border: solid 1px #8a8a8a;
+  color: white;
+  padding: 10px 25px 10px 25px;
+  margin-right: -5px;
+  font-size: 20px;
+  background-color: #2f2f2f;
+  width: inherit;
+  cursor: pointer;
+  padding-right: 35px;
+  padding-left: 34px;
+}
+
+#dot:hover{
+  background-color: #1f1f1f;
+}
+
+.operators{
+  background-color: black;
+  color:white;
+  display: inline;
+  border: solid 1px #8a8a8a;
+  padding: 10px 25px 10px 25px;
+  margin-right: -5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.operators:hover{
+  background-color: #2f2f2f;
+}
+
+#divide{
+  padding-left: 26px;
+  padding-right: 25.5px;
+}
+
+#minus{
+  padding-left: 28px;
+  padding-right: 27px;
+}
+
+#allClear{
+  padding-left: 24px;
+  padding-right: 23px;
+  background: #e00;
+}
+
+#allClear:hover{
+  background: #a10;
+}
+
+#clear{
+  padding-left: 31px;
+  padding-right: 30px;
+}
+
+#percent{
+  padding-left: 29px;
+  padding-right: 28px;
+}
+
+#firstRow{
+  margin-top: -1px;
+  margin-left: -1px;
+  border-top: solid 1px #8a8a8a;
+}
+
+#secondRow{
+  margin-left: -1px;
+}
+
+#thirdRow{
+  margin-left: -1px;
+}
+
+#fourthRow{
+  margin-left: -1px;
+}
+
+#fifthRow{
+  margin-left: -1px;
+}
+
+.secondRow{
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.thirdRow{
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.fourthRow{
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.fourthColumn{
+  padding-left: 26px;
+  padding-right: 24px;
+  background-color: orange;
+}
+
+.fourthColumn:hover{
+  background-color: #c5801d;
+}
