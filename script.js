@@ -1,30 +1,11 @@
 //"My first Project"
 
-
-// Save html DOM elements into variables.
-
-  var one = document.getElementById("one")
-  var two = document.getElementById("two");
-  var three = document.getElementById("three");
-  var four = document.getElementById("four");
-  var five = document.getElementById("five");
-  var six = document.getElementById("six");
-  var seven = document.getElementById("seven");
-  var eight = document.getElementById("eight");
-  var nine = document.getElementById("nine");
+// Save key components in variables
+  var currentOperation = document.getElementById("currentOperation");
 
   var dot = document.getElementById("dot");
-  var percent = document.getElementById("percent");
-
-  var allClear = document.getElementById("allClear")
-
-  var plus = document.getElementById("plus");
-  var minus = document.getElementById("minus");
-  var multiply = document.getElementById("multiply");
-  var divide = document.getElementById("divide");
-  var percentage = document.getElementById("percent");
-
-  var currentOperation = document.getElementById("currentOperation");
+  var allClear = document.getElementById("allClear");
+  var clear = document.getElementById("clear");
 
   var displayValue = "0";
   var hangingValue;
@@ -32,6 +13,8 @@
 
   var numbers = document.getElementsByClassName("numbers");
   var operators = document.getElementsByClassName("operators");
+
+//Set functions to update display and operate accordingly.
 
   var update = function update(number){
     var clickedNumber = number.target.innerHTML;
@@ -44,7 +27,7 @@
     currentOperation.innerHTML = displayValue;
   }
 
-  var addOperator = function addOperator(operator){
+  var operation = function operation(operator){
     var clickedOperator = operator.target.innerHTML;
 
     if(clickedOperator == "+"){
@@ -72,23 +55,42 @@
     evalStringArray.push(hangingValue);
     evalStringArray.push("/");
 
+  }  else if(clickedOperator == "%"){
+    hangingValue = displayValue;
+    displayValue = "0";
+    evalStringArray.push(hangingValue);
+    evalStringArray.push("%");
+
+
   }  else if(clickedOperator == "="){
 
     evalStringArray.push(displayValue);
-    var calculation = eval(evalStringArray.join(" "));
+
+    if(evalStringArray.includes("%")){
+      displayValue = evalStringArray[0]/100 * evalStringArray[2];
+      currentOperation.innerHTML = displayValue;
+
+    } else {
+      var calculation = eval(evalStringArray.join(" "));
     displayValue = calculation + " ";
     currentOperation.innerHTML = displayValue;
-    //evalStringArray = [displayValue];
-    //displayValue = "0";
+    evalStringArray = [];
+  }
+
   }
 }
+
+//Add Event Listeners for numbers and operators.
+
   for(let i = 0; i < numbers.length; i++){
     numbers[i].addEventListener("click", update);
   }
 
   for(let i = 0; i < operators.length; i++){
-    operators[i].addEventListener("click", addOperator);
+    operators[i].addEventListener("click", operation);
   }
+
+//Add extra functionality
 
   allClear.onclick = function(){
     displayValue = "0";
@@ -114,7 +116,3 @@
       currentOperation.innerHTML = displayValuel;
     }
   }
- percentage.onclick = function(){
-   displayValue /= 100;
-   currentOperation.innerHTML = displayValue;
- }
