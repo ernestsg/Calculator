@@ -240,7 +240,7 @@
       //"My first Project"
 
       // Save key components in variables
-      
+
         var currentOperation = document.getElementById("currentOperation");
 
         var dot = document.getElementById("dot");
