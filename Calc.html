@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Project #1 </title>
+
+        <style>
+        body {
+          background: linear-gradient(to right, black, orange);
+        }
+
+        #calculator{
+           background-color: #2f2f2f;
+           color: #9d9d9d;
+           display: block;
+           margin: auto;
+           margin-top: 125px;
+           padding: 20px 0px 20px 0px;
+           border: solid 2px #8a8a8a;
+           width: 294px;
+           height: 330px;
+           font-size: 20px;
+
+        }
+
+        legend {
+          float:right;
+          font-family: monospace;
+          font-size: 30px;
+          padding-right: 20px;
+          color: white;
+        }
+
+        #displayOperations{
+          color: white;
+          font-size: 30px;
+          background-color: #2f2f2f;
+          width: 272px;
+          height : 27px;
+          padding-right: 10px;
+          margin-top: 20px;
+          text-align:right;
+          overflow: hidden;
+          padding: 0px 20px 20px 0px;
+        }
+
+        .numbers{
+          display: inline;
+          border: solid 1px #8a8a8a;
+          color: white;
+          padding: 10px 25px 10px 25px;
+          margin-right: -5px;
+          font-size: 20px;
+          background-color: #2f2f2f;
+          width: inherit;
+          cursor: pointer;
+        }
+
+        .numbers:hover{
+          background-color: #1f1f1f;
+        }
+
+        #zero{
+          display:inline-grid;
+          padding-right: 66px;
+          padding-left: 75px;
+        }
+
+        #dot{
+          display: inline;
+          border: solid 1px #8a8a8a;
+          color: white;
+          padding: 10px 25px 10px 25px;
+          margin-right: -5px;
+          font-size: 20px;
+          background-color: #2f2f2f;
+          width: inherit;
+          cursor: pointer;
+          padding-right: 35px;
+          padding-left: 34px;
+        }
+
+        #dot:hover{
+          background-color: #1f1f1f;
+        }
+
+        .operators{
+          background-color: black;
+          color:white;
+          display: inline;
+          border: solid 1px #8a8a8a;
+          padding: 10px 25px 10px 25px;
+          margin-right: -5px;
+          font-size: 20px;
+          cursor: pointer;
+        }
+
+        .operators:hover{
+          background-color: #2f2f2f;
+        }
+
+        #divide{
+          padding-left: 26px;
+          padding-right: 25.5px;
+        }
+
+        #minus{
+          padding-left: 28px;
+          padding-right: 27px;
+        }
+
+        #allClear{
+          padding-left: 24px;
+          padding-right: 23px;
+          background: #e00;
+        }
+
+        #allClear:hover{
+          background: #a10;
+        }
+
+        #clear{
+          padding-left: 31px;
+          padding-right: 30px;
+        }
+
+        #percent{
+          padding-left: 29px;
+          padding-right: 28px;
+        }
+
+        #firstRow{
+          margin-top: -1px;
+          margin-left: -1px;
+          border-top: solid 1px #8a8a8a;
+        }
+
+        #secondRow{
+          margin-left: -1px;
+        }
+
+        #thirdRow{
+          margin-left: -1px;
+        }
+
+        #fourthRow{
+          margin-left: -1px;
+        }
+
+        #fifthRow{
+          margin-left: -1px;
+        }
+
+        .secondRow{
+          padding-left: 32px;
+          padding-right: 32px;
+        }
+
+        .thirdRow{
+          padding-left: 32px;
+          padding-right: 32px;
+        }
+
+        .fourthRow{
+          padding-left: 32px;
+          padding-right: 32px;
+        }
+
+        .fourthColumn{
+          padding-left: 26px;
+          padding-right: 24px;
+          background-color: orange;
+        }
+
+        .fourthColumn:hover{
+          background-color: #c5801d;
+        }
+
+        </style>
+
+  </head>
+
+  <body>
+    <fieldset id="calculator">
+      <legend>Calculator</legend>
+
+
+      <br>
+      <br>
+      <hr>
+
+
+      <div id="displayOperations">
+
+        <div id="currentOperation">0</div>
+
+      </div>
+
+
+        <div id="firstRow">
+            <button id="allClear" class="operators firstRow firstColumn">AC</button>
+            <button id="clear" class="operators secondRow secondColumn">C</button>
+            <button id="percent" class="operators thirdRow thirdColumn">%</button>
+            <button id="equal" class="operators firstRow fourthColumn">=</button>
+        </div>
+
+        <div id="secondRow">
+          <button id="seven" class="numbers secondRow firstColumn">7</button>
+          <button id="eight" class="numbers secondRow secondColumn">8</button>
+          <button id="nine" class="numbers secondRow thirdColumn">9</button>
+          <button id="plus" class="operators secondRow fourthColumn">+</button>
+        </div>
+
+        <div id="thirdRow">
+          <button id="four" class="numbers thirdRow firstColumn">4</button>
+          <button id="five" class="numbers thirdRow secondColumn">5</button>
+          <button id="six" class="numbers thirdRow thirdColumn">6</button>
+          <button id="minus" class="operators thirdRow fourthColumn">-</button>
+        </div>
+
+
+        <div id="fourthRow">
+          <button id="one" class="numbers fourthRow firstColumn">1</button>
+          <button id="two" class="numbers fourthRow secondColumn">2</button>
+          <button id="three" class="numbers fourthRow thirdColumn">3</button>
+          <button id="multiply" class="operators fourthRow fourthColumn">×</button>
+        </div>
+
+        <div id="fifthRow">
+          <button id="zero" class="numbers fifthRow firstColumn">0</button>
+            <button id="dot"  class="fifthRow thirdColumn">.</button>
+            <button id="divide" class="operators fifthRow fourthColumn">÷</button>
+        </div>
+
+
+        </fieldset>
+
+    <script>
+    //"My first Project"
+
+    // Save key components in variables
+
+      var currentOperation = document.getElementById("currentOperation");
+
+      var dot = document.getElementById("dot");
+      var allClear = document.getElementById("allClear");
+      var clear = document.getElementById("clear");
+
+      var displayValue = "0";
+      var hangingValue;
+      var evalStringArray = [];
+
+      var numbers = document.getElementsByClassName("numbers");
+      var operators = document.getElementsByClassName("operators");
+
+    //Set functions to update display and operate accordingly.
+
+      var update = function update(number){
+        var clickedNumber = number.target.innerHTML;
+
+        if(displayValue === "0"){
+          displayValue = "";
+        }
+
+        displayValue += clickedNumber;
+        currentOperation.innerHTML = displayValue;
+      }
+
+      var operation = function operation(operator){
+        var clickedOperator = operator.target.innerHTML;
+
+        if(clickedOperator == "+"){
+          hangingValue = displayValue;
+          displayValue = "0";
+          evalStringArray.push(hangingValue);
+          evalStringArray.push("+");
+
+        } else if(clickedOperator == "-"){
+          hangingValue = displayValue;
+          displayValue = "0";
+          evalStringArray.push(hangingValue);
+          evalStringArray.push("-");
+
+        } else if(clickedOperator == "×"){
+          hangingValue = displayValue;
+          displayValue = "0";
+          evalStringArray.push(hangingValue);
+          evalStringArray.push("*");
+
+      } else if(clickedOperator == "÷"){
+
+        hangingValue = displayValue;
+        displayValue = "0";
+        evalStringArray.push(hangingValue);
+        evalStringArray.push("/");
+
+      }  else if(clickedOperator == "%"){
+        hangingValue = displayValue;
+        displayValue = "0";
+        evalStringArray.push(hangingValue);
+        evalStringArray.push("%");
+
+
+      }  else if(clickedOperator == "="){
+
+        evalStringArray.push(displayValue);
+
+        if(evalStringArray.includes("%")){
+          displayValue = evalStringArray[0]/100 * evalStringArray[2];
+          currentOperation.innerHTML = displayValue;
+          evalStringArray = [];
+
+        } else {
+          var calculation = eval(evalStringArray.join(" "));
+        displayValue = calculation + " ";
+        currentOperation.innerHTML = displayValue;
+        evalStringArray = [];
+      }
+
+      }
+    }
+
+    //Add Event Listeners for numbers and operators.
+
+      for(let i = 0; i < numbers.length; i++){
+        numbers[i].addEventListener("click", update, false);
+      }
+
+      for(let i = 0; i < operators.length; i++){
+        operators[i].addEventListener("click", operation, false);
+      }
+
+    //Add extra functionality
+
+      allClear.onclick = function(){
+        displayValue = "0";
+        prendingValue = "";
+        evalStringArray = [];
+        currentOperation.innerHTML = displayValue;
+      };
+
+
+      clear.onclick = function(){
+        displayValue = displayValue.slice(0, displayValue.length -1);
+        currentOperation.innerHTML = displayValue;
+
+        if(displayValue === ""){
+          displayValue = "0";
+          currentOperation.innerHTML = displayValue;
+        };
+      };
+
+      dot.onclick = function(){
+        if(!displayValue.includes(".")){
+          displayValue += dot.innerHTML;
+          currentOperation.innerHTML = displayValuel;
+        }
+      }
+
+    </script>
+
+  </body>
+</html>
